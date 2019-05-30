@@ -4,6 +4,8 @@ import './App.css';
 import Loader from './components/Loader';
 import NetworkItem from './components/NetworkItem';
 import StationsContainer from './containers/StationsContainer';
+import Station from './components/Station';
+import StationContainer from './containers/StationContainer';
 
 export default class App extends PureComponent {
 	static propTypes = {
@@ -34,16 +36,20 @@ export default class App extends PureComponent {
 							Find your bike:
 						</header>
 						<div style={{display: 'flex'}}>
-							<div className='network'>
-								{networks.map(item => (
-									<NetworkItem
-										key={item.id}
-										network={item}
-										onClick={this.chooseNetwork}
-									/>
-								))}
+							<div style={{display: 'flex', flexDirection: 'column'}}>
+								<div style={{fontSize: 24}}>Networks:</div>
+								<div className='network'>
+									{networks.map(item => (
+										<NetworkItem
+											key={item.id}
+											network={item}
+											onClick={this.chooseNetwork}
+										/>
+									))}
+								</div>
 							</div>
 							<StationsContainer />
+							<StationContainer />
 						</div>
 					</div>
 				)

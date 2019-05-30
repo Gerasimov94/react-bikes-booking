@@ -5,6 +5,7 @@ import {
 	REQUEST_START,
 	CHOOSE_NETWORK,
 	SAVE_NETWORKS,
+	SELECT_STATION,
 } from '../constants/bikesConstants';
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
 	networks: [],
 	choosenNetworkID: null,
 	selectedNetwork: null,
+	selectedStation: null,
 };
 
 export default handleActions({
@@ -34,5 +36,9 @@ export default handleActions({
 	[SAVE_NETWORK]: (state, {payload: {network}}) => ({
 		...state,
 		selectedNetwork: network,
+	}),
+	[SELECT_STATION]: (state, {payload: {selectedStation}}) => ({
+		...state,
+		selectedStation,
 	}),
 }, initialState);

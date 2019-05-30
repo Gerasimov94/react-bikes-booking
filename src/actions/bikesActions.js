@@ -7,6 +7,7 @@ import {
 	SAVE_NETWORKS,
 	REQUEST_NETWORKS,
 	CHOOSE_NETWORK,
+	SELECT_STATION,
 } from '../constants/bikesConstants';
 
 export const startRequest = createAction(
@@ -29,6 +30,11 @@ export const saveNetworks = createAction(
 export const saveNetwork = createAction(
 	SAVE_NETWORK,
 	network => ({network})
+);
+
+export const saveStation = createAction(
+	SELECT_STATION,
+	selectedStation => ({selectedStation})
 );
 
 export const chooseNetwork = createAction(

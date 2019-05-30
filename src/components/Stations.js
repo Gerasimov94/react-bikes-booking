@@ -1,35 +1,28 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import StationItem from './StationItem';
 
 export default class Stations extends Component {
-	static propTypes = {
-		network: PropTypes.shape({
-			id: PropTypes.string,
-			name: PropTypes.string,
-		}).isRequired,
-		onClick: PropTypes.func.isRequired,
-	}
 
-	onClick = () => {
-		const {onClick, network} = this.props;
-
-		//onClick(network.id);
-	}
+	onStationClick = (id) => this.props.saveStation(id)
 
 	render() {
-		const {network} = this.props;
-
 		return (
-			network
-				? (
-					<div
-						onClick={this.onClick}
-						className='currentNetwork'
-					>
-						{network.name}
-					</div>
-				)
-				: <div className='currentNetwork'>choose network</div>
+			<div>
+				{this.props.network && (
+					<>
+						<div>
+							Stations
+						</div>
+						{this.props.network.stations.map(station => (
+							<StationItem
+								key={station.id}
+								onClick={this.onStationClick}
+								station={station}
+							/>
+						))}
+					</>
+				)}
+			</div>
 		);
 	}
 }

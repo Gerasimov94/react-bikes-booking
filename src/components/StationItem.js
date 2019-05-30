@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-export default class NetworkItem extends Component {
+export default class StationItem extends Component {
 	static propTypes = {
-		network: PropTypes.arrayOf(PropTypes.shape({
+		station: PropTypes.arrayOf(PropTypes.shape({
 			name: PropTypes.string,
 			id: PropTypes.string,
 		})).isRequired,
@@ -11,13 +11,13 @@ export default class NetworkItem extends Component {
 	}
 
 	onClick = () => {
-		const {onClick, network} = this.props;
+		const {onClick, station} = this.props;
 
-		onClick(network.id);
+		onClick(station);
 	}
 
 	render() {
-		const {network} = this.props;
+		const {station} = this.props;
 
 		return (
 			<div
@@ -25,10 +25,10 @@ export default class NetworkItem extends Component {
 				className='network-item'
 			>
 				<div>
-					{network.name}
+					{station.name}
 				</div>
 				<div>
-					{network.id}
+					{station.id}
 				</div>
 			</div>
 		);
