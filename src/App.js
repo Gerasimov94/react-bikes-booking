@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import './App.scss';
+import NetworkInputContainer from './containers/NetworkInputContainer';
 import Loader from './components/Loader';
 import NetworkItem from './components/NetworkItem';
 import StationsContainer from './containers/StationsContainer';
@@ -34,9 +35,10 @@ export default class App extends PureComponent {
 						<header className='header'>
 							Where can i rent a bike?
 						</header>
-						<div style={{display: 'flex'}}>
-							<div style={{display: 'flex', flexDirection: 'column'}}>
+						<div className='flex'>
+							<div className='flex-column'>
 								<div className='title'>Networks:</div>
+								<NetworkInputContainer />
 								<div className='networks'>
 									{networks.map(item => (
 										<NetworkItem

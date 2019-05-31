@@ -5,6 +5,8 @@ import {
 	REQUEST_START,
 	CHOOSE_NETWORK,
 	SAVE_NETWORKS,
+	CHANGE_NETWORK_FILTER,
+	CHANGE_STATION_FILTER,
 	SELECT_STATION,
 } from '../constants/bikesConstants';
 
@@ -14,6 +16,8 @@ const initialState = {
 	choosenNetworkID: null,
 	selectedNetwork: null,
 	selectedStation: null,
+	networkFilter: '',
+	stationFilter: '',
 };
 
 export default handleActions({
@@ -37,8 +41,16 @@ export default handleActions({
 		...state,
 		selectedNetwork: network,
 	}),
+	[CHANGE_STATION_FILTER]: (state, {payload: {filter}}) => ({
+		...state,
+		stationFilter: filter,
+	}),
 	[SELECT_STATION]: (state, {payload: {selectedStation}}) => ({
 		...state,
 		selectedStation,
+	}),
+	[CHANGE_NETWORK_FILTER]: (state, {payload: {filter}}) => ({
+		...state,
+		networkFilter: filter,
 	}),
 }, initialState);

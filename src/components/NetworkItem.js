@@ -24,10 +24,10 @@ export default class NetworkItem extends Component {
 				onClick={this.onClick}
 				className='network-item'
 			>
-				<div>
+				<div className='overflow-ellipsis'>
 					{network.name}
 				</div>
-				<div>
+				<div className='overflow-ellipsis'>
 					{network.id}
 				</div>
 			</div>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import StationItem from './StationItem';
+import StationInputContainer from '../containers/StationInputContainer';
 
 export default class Stations extends Component {
 	static propTypes = {
@@ -26,6 +27,7 @@ export default class Stations extends Component {
 						<div className='title'>
 							Stations
 						</div>
+						<StationInputContainer />
 						<div className='stations__content'>
 							{this.props.network.stations.map(station => (
 								<StationItem

@@ -1,6 +1,21 @@
 @mixin cell-padding {
 	padding: .3rem .5rem .5rem;
 }
+
+.overflow-ellipsis {
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
   
 $table-border-color: #cecece;
 $blue200: #90CAF9;
@@ -15,6 +30,14 @@ $blue200: #90CAF9;
 	align-items: center;
 	font-size: 24px;
 	color: black;
+}
+
+.input {
+	padding: 0px 10px;
+	font-size: 16px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: 1px solid;
 }
 
 .maps-container {
@@ -80,7 +103,7 @@ $blue200: #90CAF9;
 .network-item {
 	margin: 10px;
 	color: black;
-	width: max-content;
+	width: 250px;
 
 	&:hover {
 		background: $blue200;
@@ -98,8 +121,9 @@ $blue200: #90CAF9;
 }
 
 .loader {
-	display: inline-block;
-	position: relative;
+	position: absolute;
+	top: calc(50% - 32px);
+	left: calc(50% - 32px);
 	width: 64px;
 	height: 64px;
 

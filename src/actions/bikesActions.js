@@ -8,6 +8,8 @@ import {
 	REQUEST_NETWORKS,
 	CHOOSE_NETWORK,
 	SELECT_STATION,
+	CHANGE_NETWORK_FILTER,
+	CHANGE_STATION_FILTER,
 } from '../constants/bikesConstants';
 
 export const startRequest = createAction(
@@ -40,4 +42,14 @@ export const saveStation = createAction(
 export const chooseNetwork = createAction(
 	CHOOSE_NETWORK,
 	networkID => ({networkID})
+);
+
+export const changeNetworkFilter = createAction(
+	CHANGE_NETWORK_FILTER,
+	filter => ({filter})
+);
+
+export const changeStationFilter = createAction(
+	CHANGE_STATION_FILTER,
+	filter => ({filter})
 );
