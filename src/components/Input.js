@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class Input extends Component {
 	static propTypes = {
-		value: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+		value: PropTypes.string,
 		isDisabled: PropTypes.bool,
 		onChange: PropTypes.func,
 		width: PropTypes.number,

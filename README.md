@@ -6,4 +6,4 @@ In the project directory, you can run:
 
 ### `npm start` or `yarn start`
 
-deployed at: https://citybik.herokuapp.com/
+deployed at: https://brandslisten-citybik.herokuapp.com/
