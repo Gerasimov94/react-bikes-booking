@@ -1,11 +1,10 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import './App.css';
+import './App.scss';
 import Loader from './components/Loader';
 import NetworkItem from './components/NetworkItem';
 import StationsContainer from './containers/StationsContainer';
-import Station from './components/Station';
-import StationContainer from './containers/StationContainer';
+import SelectedStationContainer from './containers/SelectedStationContainer';
 
 export default class App extends PureComponent {
 	static propTypes = {
@@ -33,12 +32,12 @@ export default class App extends PureComponent {
 				: (
 					<div>
 						<header className='header'>
-							Find your bike:
+							Where can i rent a bike?
 						</header>
 						<div style={{display: 'flex'}}>
 							<div style={{display: 'flex', flexDirection: 'column'}}>
-								<div style={{fontSize: 24}}>Networks:</div>
-								<div className='network'>
+								<div className='title'>Networks:</div>
+								<div className='networks'>
 									{networks.map(item => (
 										<NetworkItem
 											key={item.id}
@@ -49,7 +48,7 @@ export default class App extends PureComponent {
 								</div>
 							</div>
 							<StationsContainer />
-							<StationContainer />
+							<SelectedStationContainer />
 						</div>
 					</div>
 				)

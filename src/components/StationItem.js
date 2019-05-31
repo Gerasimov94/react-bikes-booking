@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 export default class StationItem extends Component {
 	static propTypes = {
-		station: PropTypes.arrayOf(PropTypes.shape({
+		station: PropTypes.shape({
 			name: PropTypes.string,
 			id: PropTypes.string,
-		})).isRequired,
+		}).isRequired,
 		onClick: PropTypes.func.isRequired,
 	}
 

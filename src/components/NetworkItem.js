@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 export default class NetworkItem extends Component {
 	static propTypes = {
-		network: PropTypes.arrayOf(PropTypes.shape({
+		network: PropTypes.shape({
 			name: PropTypes.string,
 			id: PropTypes.string,
-		})).isRequired,
+		}).isRequired,
 		onClick: PropTypes.func.isRequired,
 	}
 

@@ -1,5 +1,4 @@
 import {takeLatest, call, put, all} from 'redux-saga/effects';
-
 import {startRequest, endRequest, saveNetworks, saveNetwork} from '../actions/bikesActions';
 import {REQUEST_NETWORKS, CHOOSE_NETWORK} from '../constants/bikesConstants';
 import {fetch} from '../utils/fetch';

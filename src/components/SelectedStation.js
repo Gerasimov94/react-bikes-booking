@@ -2,34 +2,32 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Maps from './Maps';
 
-export default class Station extends Component {
+export default class SelectedStation extends Component {
 	static propTypes = {
 		station: PropTypes.shape({
 			id: PropTypes.string,
 			name: PropTypes.string,
-		}).isRequired,
-		onClick: PropTypes.func.isRequired,
+		}),
+		network: PropTypes.shape({
+			id: PropTypes.string,
+		}),
 	}
 
-	onClick = () => {
-		const {onClick, station} = this.props;
-
-		//onClick(network.id);
+	static defaultProps = {
+		station: null,
+		network: null,
 	}
 
 	render() {
-		const {station} = this.props;
+		const {station, network} = this.props;
 		const date = station ? new Date(station.timestamp) : new Date();
 		const timeStamp = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
 
 		return (
 			station
 				? (
-					<div
-						onClick={this.onClick}
-						className='currentNetwork'
-					>
-						<div>Choosen station</div>
+					<div className='currentStation'>
+						<div className='title'>Choosen station</div>
 						<div>
 							<h3>{station.name}</h3>
 							<table className='table'>
@@ -56,7 +54,7 @@ export default class Station extends Component {
 						<Maps station={station} />
 					</div>
 				)
-				: <div className='currentNetwork'>choose network</div>
+				: network && <div className='noop'>Choose station</div>
 		);
 	}
 }
